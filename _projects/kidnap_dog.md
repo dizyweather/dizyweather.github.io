@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 1
+title: 
 description: with background image
-img: assets/img/12.jpg
+img: assets/kidnap_dog/robodog.gif
 importance: 1
 category: work
 related_publications: true
