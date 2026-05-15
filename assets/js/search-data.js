@@ -414,7 +414,7 @@ ninja.data = [{
               window.location.href = "/projects/kidnap_dog/";
             },},{id: "projects-cu-robotics-plate-detection-amp-classification",
           title: 'CU Robotics - Plate Detection &amp;amp; Classification',
-          description: "Robustly detecting armor plates for Robomasters",
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/plate_detection/";
             },},{id: "teachings-data-science-fundamentals",
