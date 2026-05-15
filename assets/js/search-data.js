@@ -404,7 +404,7 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "projects-honeybee-swarm-formation",
           title: 'Honeybee Swarm Formation',
-          description: "a project that redirects to another website",
+          description: "Experimental setup and analysis of honeybee swarms",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bees/";
             },},{id: "projects-kidnap-dog",
@@ -412,9 +412,9 @@ ninja.data = [{
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/kidnap_dog/";
-            },},{id: "projects-armor-plate-detection",
-          title: 'Armor Plate Detection',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-cu-robotics-plate-detection-amp-classification",
+          title: 'CU Robotics - Plate Detection &amp;amp; Classification',
+          description: "Robustly detecting armor plates for Robomasters",
           section: "Projects",handler: () => {
               window.location.href = "/projects/plate_detection/";
             },},{id: "teachings-data-science-fundamentals",
