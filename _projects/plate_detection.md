@@ -9,13 +9,13 @@ giscus_comments: true
 ---
 
 ### Background
-I am a member of [CU Robotics](https://curobotics.net/) and we compete in the [Arc Robotics](https://www.arc-robotics.org/) competition. A primary way to score points in this competition is by detecting and shooting our opponents' armor plates. 
+I am a Software Lead focusing on CV/ML for [CU Robotics](https://curobotics.net/). We compete in the [Arc Robotics](https://www.arc-robotics.org/) competition, where a primary way to score points is by detecting and shooting our opponents' armor plates.
 
-As such, I built our entire machine learning pipeline for armor plate detection, from data collection to inference.
+As such, I co-led the creation of our entire machine learning pipeline for armor plate detection, from data collection to inference.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include video.liquid path="assets/video/match_output.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true loop=true %}
+        {% include video.liquid path="assets/video/purdue_comp.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true loop=true %}
     </div>
 </div>
 <div class="caption">
