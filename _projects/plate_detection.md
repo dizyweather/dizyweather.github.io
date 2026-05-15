@@ -8,18 +8,19 @@ category: work
 giscus_comments: true
 ---
 
+### Background
+I am a member of [CU Robotics](https://curobotics.net/) and we compete in the [Arc Robotics](https://www.arc-robotics.org/) competition. A primary way to score points in this competition is by detecting and shooting our opponents' armor plates. 
+
+As such, I built our entire machine learning pipeline for armor plate detection, from data collection to inference.
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
         {% include video.liquid path="assets/video/match_output.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true loop=true %}
     </div>
 </div>
 <div class="caption">
-    Demo of the current models in action, showing accurate plate detection and icon classification.
+    Demo of the current models in action, showing plate detection (color & confidence on bottom) and icon detection (icon & confidence on top).
 </div>
-
-I am a member of [CU Robotics](https://curobotics.net/) and we compete in the [Arc Robotics](https://www.arc-robotics.org/) competition. A primary way to score points in this competition is by detecting and shooting our opponents' armor plates. 
-
-As such, I built our entire machine learning pipeline for armor plate detection, from data collection to inference.
 
 ### Dataset Collection
 
