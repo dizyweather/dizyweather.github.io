@@ -17,7 +17,7 @@ giscus_comments: true
     Demo of the current models in action, showing accurate plate detection and icon classification.
 </div>
 
-CU Robotics competes in the Arc Robotics competition, and a primary way to score points is by detecting and shooting their armor plates. 
+I am a member of [CU Robotics](https://curobotics.net/) and we compete in the [Arc Robotics](https://www.arc-robotics.org/) competition. A primary way to score points in this competition is by detecting and shooting our opponents' armor plates. 
 
 As such, I built our entire machine learning pipeline for armor plate detection, from data collection to inference.
 
