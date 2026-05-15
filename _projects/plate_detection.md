@@ -28,12 +28,20 @@ There was no existing dataset for this task, so we collected our own.
 
 Our plate detection dataset was created by taking photos of our robots with plates attached in different scenarios and floating plates to not overfit to our robots.
 
+<style>
+  .dataset-img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    width: 100%;
+  }
+</style>
+
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/CU_Robotics/plate_dataset.jpg" title="Plate Dataset" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/CU_Robotics/plate_dataset.jpg" title="Plate Dataset" class="img-fluid rounded z-depth-1 dataset-img" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/CU_Robotics/icon_dataset.jpg" title="Icon Dataset" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/CU_Robotics/icon_dataset.jpg" title="Icon Dataset" class="img-fluid rounded z-depth-1 dataset-img" %}
     </div>
 </div>
 <div class="caption">
