@@ -412,8 +412,8 @@ ninja.data = [{
           description: "with background image",
           section: "Projects",handler: () => {
               window.location.href = "/projects/kidnap_dog/";
-            },},{id: "projects-cu-robotics-plate-detection-amp-classification",
-          title: 'CU Robotics - Plate Detection &amp;amp; Classification',
+            },},{id: "projects-real-time-quot-enemy-quot-robot-detection",
+          title: 'Real-Time &amp;quot;Enemy&amp;quot; Robot Detection',
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/plate_detection/";
