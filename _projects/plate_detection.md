@@ -1,7 +1,7 @@
 ---
 layout: page
-title: CU Robotics - Plate Detection & Classification
-description: 
+title: Real-Time "Enemy" Robot Detection
+description: ""
 img: assets/img/3.jpg
 importance: 2
 category: work
@@ -9,7 +9,7 @@ giscus_comments: true
 ---
 
 ### Background
-I am a Software Lead focusing on CV/ML for [CU Robotics](https://curobotics.net/). We compete in the [Arc Robotics](https://www.arc-robotics.org/) competition, where a primary way to score points is by detecting and shooting our opponents' armor plates.
+I am a Software Lead focusing on CV/ML for [CU Robotics](https://curobotics.net/). We compete in the [Arc Robotics](https://www.arc-robotics.org/) competition, where a primary way to score points is by detecting and shooting our opponents' armor plates. 
 
 As such, I co-led the creation of our entire machine learning pipeline for armor plate detection, from data collection to inference.
 
@@ -28,24 +28,22 @@ There was no existing dataset for this task, so we collected our own.
 
 Our plate detection dataset was created by taking photos of our robots with plates attached in different scenarios and floating plates to not overfit to our robots.
 
-<style>
-  .dataset-img {
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    width: 100%;
-  }
-</style>
-
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/CU_Robotics/plate_dataset.jpg" title="Plate Dataset" class="img-fluid rounded z-depth-1 dataset-img" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/CU_Robotics/icon_dataset.jpg" title="Icon Dataset" class="img-fluid rounded z-depth-1 dataset-img" %}
+        {% include figure.liquid loading="eager" path="assets/img/CU_Robotics/plate_dataset.jpg" title="Plate Dataset" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Left: Plate Dataset example. Right: Icon Dataset example.
+    Plate Dataset example.
+</div>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/CU_Robotics/icon_dataset.jpg" title="Icon Dataset" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Icon Dataset example.
 </div>
 
 We used LabelStudio as our labeling software, and SAM3 as our autolabeler to essentially distill knowledge into our smaller model.
