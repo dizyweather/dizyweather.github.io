@@ -65,10 +65,9 @@ After training the models, we exported them as `.engine` files through TensorRT 
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
-        <!-- Placeholder for model in action -->
-        {% include figure.liquid path="assets/img/placeholder.png" title="Model in Action Placeholder" class="img-fluid rounded z-depth-1" %}
+        {% include video.liquid path="assets/video/match_output.mp4" class="img-fluid rounded z-depth-1" controls=true autoplay=true loop=true %}
     </div>
 </div>
 <div class="caption">
-    Placeholder for models in action.
+    Demo of the current models in action, showing real-time plate detection and icon classification.
 </div>
