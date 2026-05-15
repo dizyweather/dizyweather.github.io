@@ -37,7 +37,7 @@ Our plate detection dataset was created by taking photos of our robots with plat
     </div>
 </div>
 <div class="caption">
-    Left: Plate Dataset example. Right: Grayscaled Icon Dataset example.
+    Left: Plate Dataset example. Right: Icon Dataset example.
 </div>
 
 We used LabelStudio as our labeling software, and SAM3 as our autolabeler to essentially distill knowledge into our smaller model.
@@ -49,7 +49,7 @@ Our hardware is a Jetson Orin AGX and 160fps cameras. Since this is a very fast 
 - **Plate Detection**: We went with Ultralytics' yolo26 nano model, seeing that TensorRT optimizations on a T4 chip brought inference down to around 3ms on their website.
 - **Icon Classification**: We ended up making a custom CNN with 7 layers. We evaluated Ultralytics' yolo26 nano classifier as well but found that it was much larger than what was needed for simple classifying.
 
-We trained the models on Google Colab, using Comet as a visualizer to check training and finetuning parameters as needed.
+We trained the models on Google Colab, using Comet as a visualizer to check training and finetune parameters as needed.
 
 ### Implementation
 
