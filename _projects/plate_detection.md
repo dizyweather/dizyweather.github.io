@@ -37,14 +37,6 @@ Our plate detection dataset was created by taking photos of our robots with plat
     Plate Dataset example.
 </div>
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/CU_Robotics/icon_dataset.jpg" title="Icon Dataset" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Icon Dataset example.
-</div>
 
 We used LabelStudio as our labeling software, and SAM3 as our autolabeler to essentially distill knowledge into our smaller model.
 
