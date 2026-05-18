@@ -36,16 +36,29 @@ I designed, built, and implemented an experimental setup with the team that succ
           3. Change the 'src' attribute below to "{{ '/assets/img/bees/mount_model.glb' | relative_url }}"
         -->
         <model-viewer 
+            id="gopro-mount-viewer"
             src="{{ '/assets/img/bees/mount_model.glb' | relative_url }}" 
             alt="Interactive 3D model of custom GoPro mounts" 
             auto-rotate 
             camera-controls 
             ar 
             shadow-intensity="1" 
-            style="width: 100%; height: 400px; background-color: #f8f9fa; border-radius: 8px; border: 1px solid #ddd;"
+            style="width: 100%; height: 400px; background-color: transparent; border-radius: 8px; border: 1px solid #ddd;"
             class="z-depth-1"
         >
         </model-viewer>
+
+        <!-- Dynamic 3D model coloring script -->
+        <script>
+          const viewer = document.getElementById("gopro-mount-viewer");
+          viewer.addEventListener("load", () => {
+            // Dynamically paint all materials to a high-contrast professional blue
+            viewer.model.materials.forEach(material => {
+              // Color parameters: [Red, Green, Blue, Alpha] (all values between 0.0 and 1.0)
+              material.pbrMetallicRoughness.setBaseColorFactor([0.1, 0.5, 0.9, 1.0]);
+            });
+          });
+        </script>
     </div>
 </div>
 <div class="caption">
