@@ -36,7 +36,7 @@ I designed, built, and implemented an experimental setup with the team that succ
           3. Change the 'src' attribute below to "{{ '/assets/img/bees/mount_model.glb' | relative_url }}"
         -->
         <model-viewer 
-            src="assets/img/bees/mount_model.glb" 
+            src="{{ '/assets/img/bees/mount_model.glb' | relative_url }}" 
             alt="Interactive 3D model of custom GoPro mounts" 
             auto-rotate 
             camera-controls 
