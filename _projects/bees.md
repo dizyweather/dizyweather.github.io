@@ -23,12 +23,31 @@ I designed, built, and implemented an experimental setup with the team that succ
 - **Camera Localization & Synchronization**: Developed an automation pipeline for camera calibration and synchronization between two stereo cameras, which is critical for accurate 3D tracking of the bees.
 - **Custom Hardware Design**: Designed and 3D printed custom GoPro mounts and adapters to securely attach the recording equipment to our experimental setup under varying outdoor conditions.
 
-<div class="row mt-3">
-    <div class="col-sm mt-3 mt-md-0">
-        <!-- Placeholder for 3D model image -->
-        {% include figure.liquid path="assets/img/placeholder.png" title="3D Model Placeholder" class="img-fluid rounded z-depth-1" %}
+<!-- Load the <model-viewer> web component for interactive 3D models -->
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+<div class="row mt-3 justify-content-center">
+    <div class="col-md-8 mt-3 mt-md-0">
+        <!-- 
+          Interactive 3D model viewer.
+          To use your own 3D model:
+          1. Export your 3D design as a .glb or .gltf file (GLB is recommended for best performance).
+          2. Save the file to assets/img/bees/mount_model.glb
+          3. Change the 'src' attribute below to "{{ '/assets/img/bees/mount_model.glb' | relative_url }}"
+        -->
+        <model-viewer 
+            src="assets/img/bees/mount_model.glb" 
+            alt="Interactive 3D model of custom GoPro mounts" 
+            auto-rotate 
+            camera-controls 
+            ar 
+            shadow-intensity="1" 
+            style="width: 100%; height: 400px; background-color: #f8f9fa; border-radius: 8px; border: 1px solid #ddd;"
+            class="z-depth-1"
+        >
+        </model-viewer>
     </div>
 </div>
 <div class="caption">
-    Placeholder for 3D model of custom mounts.
+    Interactive 3D model of the custom GoPro mounts (drag to rotate, scroll to zoom!).
 </div>
