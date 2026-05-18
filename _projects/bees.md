@@ -2,7 +2,7 @@
 layout: page
 title: Honeybee Swarm Formation
 description: Experimental setup and analysis of honeybee swarms
-img: assets/img/bees/swarm.jpg
+img: assets/img/bees/swarm_cropped.jpg
 importance: 3
 category: work
 ---
