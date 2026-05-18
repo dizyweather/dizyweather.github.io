@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -440,6 +440,20 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("mailto:%64%61%6E%69%65%6C.%7A%68%75@%63%6F%6C%6F%72%61%64%6F.%65%64%75", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/dizyweather", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/dizy", "_blank");
         },
       },{
       id: 'light-theme',
