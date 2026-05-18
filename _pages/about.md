@@ -13,7 +13,7 @@ profile:
   #   <p>123 your address street</p>
   #   <p>Your City, State 12345</p>
 
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -29,6 +29,6 @@ latest_posts:
 <!-- 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder. -->
 
-Hello hello! From competing in First Robotics in high school, to now ARC Robotics in college, I’ve always loved robots! A fusion of many engineering disciplines to solve some of the toughest challenges. I’ve always found the software side of robotics the most fun, having done mostly path planning and computer vision, and now machine learning.
+**About Me**: Hello hello! From competing in First Robotics in high school, to now ARC Robotics in college, I’ve always loved robots! A fusion of many engineering disciplines to solve some of the toughest challenges. I’ve always found the software side of robotics the most fun, having done mostly path planning and computer vision, and now machine learning.
 
-I also love to play Mahjong! President/Founder of the Mahjong Club at CU Boulder and currently Master tier in Mahjong Soul. I’ve got to meet so many close friends through mahjong, and hope you have the chance to play in the future ;)
+**Hobbies**: I also love to play Mahjong! President/Founder of the Mahjong Club at CU Boulder and currently Master tier in Mahjong Soul. I’ve got to meet so many close friends through mahjong, and hope you have the chance to play in the future ;)
