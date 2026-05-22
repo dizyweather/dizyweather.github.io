@@ -52,12 +52,13 @@ I designed, built, and implemented an experimental setup with the team that succ
       });
     });
   </script>
-  <figcaption><small>Interactive 3D model of the custom GoPro mounts (drag to rotate, scroll to zoom!).</small></figcaption>
+  <figcaption style="text-align: center;"><small>Interactive 3D model of the custom GoPro mounts (drag to rotate, scroll to zoom!).</small></figcaption>
 </figure>
 
 #### Design Decisions
 
 - I designed for the use of same tightening screw as in commercial GoPro mounts
-- Hole for nut so you can screw and unscrew without needing to hold/align nut
-- Added aligning shaft to the bottom to help make sure camera is parallel to the 8020 aluminum and inline with the other camera
-- Flat middle prong on top to stay flush with the bottom of the GoPro, making it face exactly straight ahead (adjustable height/position).
+- Added hole for nut so you can screw and unscrew without needing to hold/align nut
+- Middle prong on top is flat to stay flush with the bottom of the GoPro, making it face exactly straight ahead.
+- Added aligning shaft to the bottom to fit into 8020 aluminum slider which helps make sure camera is parallel and inline with the other camera.
+- Holes on both ends for 8020 channel nuts and screws
