@@ -51,7 +51,7 @@ We trained the models on Google Colab, using Comet as a visualizer to check trai
 
 ### Implementation
 
-After training the models, we exported them as `.engine` files through TensorRT with half precision for more speed. Additionally since we will often see more than 1 plate in an image, we made sure to batch our icon classifier to be able to classify multiple plates at once. 
+After training the models, we exported them as `.engine` files through TensorRT with half precision for more speed. We're trying to get our classifier to batch and run on the Deep Learning Accelerator on our jetson to get the detection and classification running in parallel.
 
 Although I'd love to share our dataset and code we used to train models, we've made them private (for now) to have a edge against our fellow competitors ;)
 
