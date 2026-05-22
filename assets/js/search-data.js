@@ -402,9 +402,9 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-honeybee-swarm-formation",
-          title: 'Honeybee Swarm Formation',
-          description: "Experimental setup and analysis of honeybee swarms",
+          section: "News",},{id: "projects-experiment-design-and-data-collection-of-honeybee-swarms",
+          title: 'Experiment Design and Data Collection of Honeybee Swarms',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bees/";
             },},{id: "projects-kidnap-dog",
