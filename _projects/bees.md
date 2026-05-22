@@ -7,19 +7,17 @@ importance: 3
 category: work
 ---
 
-[Link to Paper: https://doi.org/10.64898/2026.03.17.711698](https://doi.org/10.64898/2026.03.17.711698)
+{% reference chase20263d %}
 
-## Intro & Why It's Important
+## Background
 
-Whether it’s a flock of geese flying in a V formation, a school of fish dodging a predator in sync, or termites building their complex nests, these feats of complex action are not orchestrated by any single organism. Instead, they emerge from the decentralized interactions of many individuals following simple rules. 
-
-Understanding these self-organizing systems is incredibly valuable. Not only does it provide profound insight into biological evolution and animal behavior, but it also directly inspires advancements in collective robotics, swarm intelligence, and distributed computing. By studying how honeybees coordinate to form swarms, we can extract principles to develop better decentralized algorithms for drone fleets, improve robust communication protocols, and design artificial systems that remain highly resilient even when individual components fail.
+I participated in the Summer 2025 SPUR program as part of the Peleg Lab under Danielle Chase, working on experiment design and data collection of bee swarm behavior.
 
 ## My Work
 
 I designed, built, and implemented an experimental setup with the team that successfully captured honeybee swarm formation in the natural environment. My contributions focused on the hardware integration, automation, and the computer vision tools required to reliably collect and analyze the swarm data.
 
-- **Motor Tracking & Defect Detection**: Created a program to track the rotation of motors, detecting deviations in rotation speed over long periods of time to identify mechanical defects and ensure our experimental apparatus ran smoothly.
+
 - **Camera Localization & Synchronization**: Developed an automation pipeline for camera calibration and synchronization between two stereo cameras, which is critical for accurate 3D tracking of the bees.
 - **Custom Hardware Design**: Designed and 3D printed custom GoPro mounts and adapters to securely attach the recording equipment to our experimental setup under varying outdoor conditions.
 
@@ -60,7 +58,15 @@ I designed, built, and implemented an experimental setup with the team that succ
           });
         </script>
     </div>
-</div>
-<div class="caption">
+    </div>
+    <details class="design-decision"><summary>Design Decisions</summary>
+    <ul>
+      <li>I designed for the use of same tightening screw as in commercial GoPro mounts</li>
+      <li>Hole for nut so you can screw and unscrew without needing to hold/align nut</li>
+      <li>Added aligning shaft to the bottom to help make sure camera is parallel to the 8020 aluminum and inline with the other camera</li>
+      <li>Flat middle prong on top to make GoPros face exactly straight ahead (as we could adjust the height and position of the rest of the setup independently)</li>
+    </ul>
+    </details>
+    <div class="caption">
     Interactive 3D model of the custom GoPro mounts (drag to rotate, scroll to zoom!).
 </div>
