@@ -7,7 +7,8 @@ importance: 3
 category: work
 ---
 
-{% bibliography --query @*chase20263d* %}
+{% capture paper_link %}[Paper: 3D Imaging of Honeybee Swarm Assembly and Disassembly](https://doi.org/10.64898/2026.03.17.711698){% endcapture %}
+{{ paper_link }}
 
 ## Background
 
@@ -24,50 +25,37 @@ I designed, built, and implemented an experimental setup with the team that succ
 <!-- Load the <model-viewer> web component for interactive 3D models -->
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
-<div class="row mt-3 justify-content-center">
-    <div class="col-md-8 mt-3 mt-md-0">
-        <!-- 
-          Interactive 3D model viewer.
-          To use your own 3D model:
-          1. Export your 3D design as a .glb or .gltf file (GLB is recommended for best performance).
-          2. Save the file to assets/img/bees/mount_model.glb
-          3. Change the 'src' attribute below to "{{ '/assets/img/bees/mount_model.glb' | relative_url }}"
-        -->
-        <model-viewer 
-            id="gopro-mount-viewer"
-            src="{{ '/assets/img/bees/mount_model.glb' | relative_url }}" 
-            alt="Interactive 3D model of custom GoPro mounts" 
-            auto-rotate 
-            camera-controls 
-            ar 
-            shadow-intensity="1" 
-            style="width: 100%; height: 400px; background-color: transparent; border-radius: 8px; border: 1px solid #ddd;"
-            class="z-depth-1"
-        >
-        </model-viewer>
+<figure class="mt-3">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <model-viewer
+        id="gopro-mount-viewer"
+        src="{{ '/assets/img/bees/mount_model.glb' | relative_url }}"
+        alt="Interactive 3D model of custom GoPro mounts"
+        auto-rotate
+        camera-controls
+        ar
+        shadow-intensity="1"
+        style="width: 100%; height: 400px; background-color: transparent; border-radius: 8px; border: 1px solid #ddd;"
+        class="z-depth-1">
+      </model-viewer>
+    </div>
+  </div>
+  <!-- Dynamic 3D model coloring script -->
+  <script>
+    const viewer = document.getElementById("gopro-mount-viewer");
+    viewer.addEventListener("load", () => {
+      viewer.model.materials.forEach(material => {
+        material.pbrMetallicRoughness.setBaseColorFactor([0.1, 0.5, 0.9, 1.0]);
+      });
+    });
+  </script>
+  <figcaption><small>Interactive 3D model of the custom GoPro mounts (drag to rotate, scroll to zoom!).</small></figcaption>
+</figure>
 
-        <!-- Dynamic 3D model coloring script -->
-        <script>
-          const viewer = document.getElementById("gopro-mount-viewer");
-          viewer.addEventListener("load", () => {
-            // Dynamically paint all materials to a high-contrast professional blue
-            viewer.model.materials.forEach(material => {
-              // Color parameters: [Red, Green, Blue, Alpha] (all values between 0.0 and 1.0)
-              material.pbrMetallicRoughness.setBaseColorFactor([0.1, 0.5, 0.9, 1.0]);
-            });
-          });
-        </script>
-    </div>
-    </div>
-        <div class="caption">
-            Interactive 3D model of the custom GoPro mounts (drag to rotate, scroll to zoom!).
-        </div>
-    </div>
-</div>
-
-## Design Decisions
+#### Design Decisions
 
 - I designed for the use of same tightening screw as in commercial GoPro mounts
 - Hole for nut so you can screw and unscrew without needing to hold/align nut
 - Added aligning shaft to the bottom to help make sure camera is parallel to the 8020 aluminum and inline with the other camera
-- Flat middle prong on top to make GoPros face exactly straight ahead (as we could adjust the height and position of the rest of the setup independently)
+- Flat middle prong on top to stay flush with the bottom of the GoPro, making it face exactly straight ahead (adjustable height/position).
