@@ -7,8 +7,10 @@ importance: 3
 category: work
 ---
 
-{% capture paper_link %}[Paper: 3D Imaging of Honeybee Swarm Assembly and Disassembly](https://doi.org/10.64898/2026.03.17.711698){% endcapture %}
-{{ paper_link }}
+
+<div class="publications">
+{% bibliography -f papers -q @*[topic=swarm]* %}
+</div>
 
 ## Background
 
