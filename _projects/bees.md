@@ -7,18 +7,18 @@ importance: 3
 category: work
 ---
 
-{% reference chase20263d %}
+{% bibliography --query @*chase20263d* %}
 
 ## Background
 
-I participated in the Summer 2025 SPUR program as part of the Peleg Lab under Danielle Chase, working on experiment design and data collection of bee swarm behavior.
+I participated in the Summer 2025 SPUR program as part of the [Peleg Lab](https://www.peleglab.com/) under Danielle Chase, working on experiment design and data collection of honey bee swarm behavior in the wild.
 
 ## My Work
 
 I designed, built, and implemented an experimental setup with the team that successfully captured honeybee swarm formation in the natural environment. My contributions focused on the hardware integration, automation, and the computer vision tools required to reliably collect and analyze the swarm data.
 
 
-- **Camera Localization & Synchronization**: Developed an automation pipeline for camera calibration and synchronization between two stereo cameras, which is critical for accurate 3D tracking of the bees.
+- **[Camera Localization & Synchronization](https://github.com/dizyweather/Camera-Localization)**: Developed an automation pipeline for camera calibration and synchronization between two stereo cameras, which is critical for accurate 3D tracking of the bees.
 - **Custom Hardware Design**: Designed and 3D printed custom GoPro mounts and adapters to securely attach the recording equipment to our experimental setup under varying outdoor conditions.
 
 <!-- Load the <model-viewer> web component for interactive 3D models -->
@@ -59,14 +59,15 @@ I designed, built, and implemented an experimental setup with the team that succ
         </script>
     </div>
     </div>
-    <details class="design-decision"><summary>Design Decisions</summary>
-    <ul>
-      <li>I designed for the use of same tightening screw as in commercial GoPro mounts</li>
-      <li>Hole for nut so you can screw and unscrew without needing to hold/align nut</li>
-      <li>Added aligning shaft to the bottom to help make sure camera is parallel to the 8020 aluminum and inline with the other camera</li>
-      <li>Flat middle prong on top to make GoPros face exactly straight ahead (as we could adjust the height and position of the rest of the setup independently)</li>
-    </ul>
-    </details>
-    <div class="caption">
-    Interactive 3D model of the custom GoPro mounts (drag to rotate, scroll to zoom!).
+        <div class="caption">
+            Interactive 3D model of the custom GoPro mounts (drag to rotate, scroll to zoom!).
+        </div>
+    </div>
 </div>
+
+## Design Decisions
+
+- I designed for the use of same tightening screw as in commercial GoPro mounts
+- Hole for nut so you can screw and unscrew without needing to hold/align nut
+- Added aligning shaft to the bottom to help make sure camera is parallel to the 8020 aluminum and inline with the other camera
+- Flat middle prong on top to make GoPros face exactly straight ahead (as we could adjust the height and position of the rest of the setup independently)
