@@ -1,12 +1,11 @@
 ---
 layout: page
 title: Experiment Design and Data Collection of Honeybee Swarms
-description: 
+description:
 img: assets/img/bees/swarm_cropped.jpg
 importance: 3
 category: work
 ---
-
 
 <div class="publications">
 {% bibliography -f papers -q @*[topic=swarm]* %}
@@ -16,10 +15,23 @@ category: work
 
 I participated in the Summer 2025 SPUR program as part of the [Peleg Lab](https://www.peleglab.com/) under Danielle Chase, working on experiment design and data collection of honey bee swarm behavior in the wild.
 
+## Presentation Slides
+
+Below are the presentation slides summarizing my research and findings. You can also [download the PowerPoint presentation slides]({{ '/assets/img/bees/Daniel_Zhu_SPUR_2025_Presentation.pptx' | relative_url }}).
+
+<div class="row justify-content-center mt-3">
+  <div class="col-md-10">
+    <object data="{{ '/assets/pdf/Daniel_Zhu_SPUR_2025_Presentation.pdf' | relative_url }}" type="application/pdf" width="100%" height="600px">
+      <iframe src="{{ '/assets/pdf/Daniel_Zhu_SPUR_2025_Presentation.pdf' | relative_url }}#toolbar=0" width="100%" height="600px" style="border: 1px solid #ddd; border-radius: 8px;">
+        <p>This browser does not support embedding PDFs. Please download the PDF to view it: <a href="{{ '/assets/pdf/Daniel_Zhu_SPUR_2025_Presentation.pdf' | relative_url }}">Download PDF</a>.</p>
+      </iframe>
+    </object>
+  </div>
+</div>
+
 ## My Work
 
 I designed, built, and implemented an experimental setup with the team that successfully captured honeybee swarm formation in the natural environment. My contributions focused on the hardware integration, automation, and the computer vision tools required to reliably collect and analyze the swarm data.
-
 
 - **[Camera Localization & Synchronization](https://github.com/dizyweather/Camera-Localization)**: Developed an automation pipeline for camera calibration and synchronization between two stereo cameras, which is critical for accurate 3D tracking of the bees.
 - **Custom Hardware Design**: Designed and 3D printed custom GoPro mounts and adapters to securely attach the recording equipment to our experimental setup under varying outdoor conditions.
