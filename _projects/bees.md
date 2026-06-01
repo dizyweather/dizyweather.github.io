@@ -17,7 +17,7 @@ I participated in the Summer 2025 SPUR program as part of the [Peleg Lab](https:
 
 ## Presentation Slides
 
-Below are the presentation slides summarizing my research and findings. You can also [download the PowerPoint presentation slides]({{ '/assets/img/bees/Daniel_Zhu_SPUR_2025_Presentation.pptx' | relative_url }}).
+Below are the presentation slides summarizing my research and findings. You can also [check out presentation slides with working videos](https://o365coloradoedu-my.sharepoint.com/:p:/r/personal/dazh5631_colorado_edu/Documents/Daniel_Zhu_SPUR_2025_Presentation.pptx?d=w01db9cd4e921480ba7f2af6ab2fcd746&csf=1&web=1&e=BghbAc).
 
 <div class="row justify-content-center mt-3">
   <div class="col-md-10">
