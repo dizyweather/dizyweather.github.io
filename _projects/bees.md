@@ -3,7 +3,7 @@ layout: page
 title: Experiment Design and Data Collection of Honeybee Swarms
 description:
 img: assets/img/bees/swarm_cropped.jpg
-importance: 3
+importance: 2
 category: work
 ---
 

@@ -3,7 +3,7 @@ layout: page
 title: Real-Time "Enemy" Robot Detection
 description: ""
 img: assets/img/CU_Robotics/highlight.jpg
-importance: 2
+importance: 1
 category: work
 giscus_comments: true
 ---

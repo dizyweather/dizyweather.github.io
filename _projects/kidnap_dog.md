@@ -1,11 +1,11 @@
 ---
 layout: page
-title: 
-description: with background image
+title: Unitree Go1 Data Collection and Localization
+description: WORK IN PROGRESS
 img: assets/img/kidnap_dog/robodog_walk.gif
-importance: 1
+importance: 3
 category: work
-related_publications: true
+related_publications: false
 ---
 
 Every project has a beautiful feature showcase page.
