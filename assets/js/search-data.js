@@ -407,9 +407,9 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bees/";
-            },},{id: "projects-kidnap-dog",
-          title: 'Kidnap_dog',
-          description: "with background image",
+            },},{id: "projects-unitree-go1-data-collection-and-localization",
+          title: 'Unitree Go1 Data Collection and Localization',
+          description: "WORK IN PROGRESS",
           section: "Projects",handler: () => {
               window.location.href = "/projects/kidnap_dog/";
             },},{id: "projects-real-time-quot-enemy-quot-robot-detection",
