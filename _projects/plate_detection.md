@@ -5,7 +5,6 @@ description: 2025 ~ Present
 img: assets/img/CU_Robotics/highlight.jpg
 importance: 1
 category: work
-giscus_comments: true
 ---
 
 ### Background  
