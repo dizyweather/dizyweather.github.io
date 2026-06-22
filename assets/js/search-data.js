@@ -419,7 +419,7 @@ ninja.data = [{
               window.location.href = "/projects/plate_detection/";
             },},{id: "projects-unitree-go1-data-collection-and-localization",
           title: 'Unitree Go1 Data Collection and Localization',
-          description: "2026 - WORK IN PROGRESS",
+          description: "2026",
           section: "Projects",handler: () => {
               window.location.href = "/projects/robodog/";
             },},{id: "teachings-data-science-fundamentals",
