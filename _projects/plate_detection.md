@@ -1,14 +1,14 @@
 ---
 layout: page
 title: Real-Time "Enemy" Robot Detection
-description: ""
+description: 2025 ~ Present
 img: assets/img/CU_Robotics/highlight.jpg
 importance: 1
 category: work
 giscus_comments: true
 ---
 
-### Background
+### Background  
 I am a Software Lead focusing on CV/ML for [CU Robotics](https://curobotics.net/). We compete in the [Arc Robotics](https://www.arc-robotics.org/) competition, where a primary way to score points is by detecting and shooting our opponents' armor plates. 
 
 As such, I co-led the creation of our entire machine learning pipeline for armor plate detection, from data collection to inference.
