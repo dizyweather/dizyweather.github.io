@@ -16,11 +16,11 @@ The Unitree Go1 only comes with onboard cameras, which are low resolution and he
 <div class="row mt-3">
 <div class="col-sm-6 mt-3 mt-md-0" markdown="1">
 
-- A **Velodyne VLP-16 3D LiDAR**: 
+- **Velodyne VLP-16 3D LiDAR**: 
    - For localization and initial map generation
-- A **RealSense D455 camera**:
+- **RealSense D455 Camera**:
    - To capture clear RGB images and depth data for vision-language model (VLM) annotations down the line
-- A **generic webcam**:
+- **Generic Webcam**:
    - Facing upward to detect ArUco codes on the ceiling for localization in environments with ArUco markers
   - _Note: While not labeled in the diagram, you can see it is mounted behind the Velodyne LiDAR, slightly outlined in grey._
 
