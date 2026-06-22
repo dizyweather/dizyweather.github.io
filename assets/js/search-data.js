@@ -402,21 +402,26 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-experiment-design-and-data-collection-of-honeybee-swarms",
+          section: "News",},{id: "projects-visual-question-and-answering-ambiguity-resolution",
+          title: 'Visual Question and Answering Ambiguity Resolution',
+          description: "2026 - WORK IN PROGRESS",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ambigious_cv/";
+            },},{id: "projects-experiment-design-and-data-collection-of-honeybee-swarms",
           title: 'Experiment Design and Data Collection of Honeybee Swarms',
-          description: "",
+          description: "2025",
           section: "Projects",handler: () => {
               window.location.href = "/projects/bees/";
-            },},{id: "projects-unitree-go1-data-collection-and-localization",
-          title: 'Unitree Go1 Data Collection and Localization',
-          description: "WORK IN PROGRESS",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/kidnap_dog/";
             },},{id: "projects-real-time-quot-enemy-quot-robot-detection",
           title: 'Real-Time &amp;quot;Enemy&amp;quot; Robot Detection',
-          description: "",
+          description: "2025 ~ Present",
           section: "Projects",handler: () => {
               window.location.href = "/projects/plate_detection/";
+            },},{id: "projects-unitree-go1-data-collection-and-localization",
+          title: 'Unitree Go1 Data Collection and Localization',
+          description: "2026 - WORK IN PROGRESS",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/robodog/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
