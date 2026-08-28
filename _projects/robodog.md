@@ -3,7 +3,7 @@ layout: page
 title: Unitree Go1 Data Collection and Localization
 description: 2026
 img: assets/img/go1/robodog_walk.gif
-importance: 2
+importance: 3
 category: work
 related_publications: false
 ---
