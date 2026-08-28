@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Computer Science Senior @ [University of Colorado Boulder](https://www.colorado.edu/)
+subtitle: 'Computer Science Senior @ <a href="https://www.colorado.edu/">CU Boulder</a>'
 
 profile:
   align: right
