@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Computer Science Rising Senior @ CU Boulder
+subtitle: Computer Science Senior @ CU Boulder
 
 profile:
   align: right
