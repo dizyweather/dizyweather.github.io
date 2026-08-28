@@ -5,7 +5,7 @@ title: resume
 description: 
 nav: true
 ---
-Last Updated: Mar 2026
+Last Updated: Aug 2026
 
 <style>
   .pdf-container {
