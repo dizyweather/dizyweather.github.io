@@ -29,8 +29,6 @@ latest_posts:
 <!-- 
 Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder. -->
 
-**About Me**: Hello hello! From competing in FIRST Robotics in high school to now ARC Robotics in college, robots have been a constant in my life! And now as my college life is coming to a close, having had the mentorship of many great people, I've found a passion for human-centered AI.
-
-&emsp;Right now, much of AI development seems to focus on scaling up and automation, aiming for AGI. But in a future I see, the most critical part of AI will be how we integrate it into daily life to make tasks easier and more accessible for everyone. From how humans can interact with robots to how we manage AI to support learning rather than stunt it, I want to be part of developing that future.
+**About Me**: Hello hello! From competing in FIRST Robotics in high school to now ARC Robotics in college, robots have been a constant in my life! And now as my college life is coming to a close, having had the mentorship of many great people, I've found a passion for human-centered AI.<br>&emsp;Right now, much of AI development seems to focus on scaling up and automation, aiming for AGI. But in a future I see, the most critical part of AI will be how we integrate it into daily life to make tasks easier and more accessible for everyone. From how humans can interact with robots to how we manage AI to support learning rather than stunt it, I want to be part of developing that future.
 
 **Hobbies**: I also love to play Mahjong! President/Founder of the Mahjong Club at CU Boulder and currently Master tier in Mahjong Soul (hard stuck there lol). I’ve got to meet so many close friends through mahjong, and hope you have the chance to play in the future ;)
