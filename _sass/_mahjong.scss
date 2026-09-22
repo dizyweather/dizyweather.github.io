@@ -1,0 +1,75 @@
+@use "variables" as *;
+
+.mahjong-timeline {
+  border-left: 3px solid var(--global-theme-color);
+  margin: 2.5rem 0 1rem 0.7rem;
+  padding-left: 2rem;
+}
+
+.timeline-entry {
+  position: relative;
+  padding: 0 0 3rem 0.5rem;
+
+  &::before {
+    background: var(--global-bg-color);
+    border: 3px solid var(--global-theme-color);
+    border-radius: 50%;
+    content: "";
+    height: 1rem;
+    left: -2.9rem;
+    position: absolute;
+    top: 0.25rem;
+    width: 1rem;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.timeline-date {
+  color: var(--global-theme-color);
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.timeline-content h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.7rem;
+}
+
+.timeline-photo-placeholder {
+  align-items: center;
+  background: var(--global-code-bg-color);
+  border: 2px dashed var(--global-divider-color);
+  color: var(--global-text-color-light);
+  display: flex;
+  font-style: italic;
+  justify-content: center;
+  margin: 1.25rem 0;
+  min-height: 13rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.timeline-reflection {
+  background: var(--global-card-bg-color);
+  border-left: 3px solid var(--global-theme-color);
+  padding: 0.85rem 1rem;
+}
+
+@media (max-width: 576px) {
+  .mahjong-timeline {
+    margin-left: 0.45rem;
+    padding-left: 1.5rem;
+  }
+
+  .timeline-entry {
+    padding-left: 0.25rem;
+
+    &::before {
+      left: -2.15rem;
+    }
+  }
+}

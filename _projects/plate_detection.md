@@ -1,16 +1,17 @@
 ---
 layout: page
 title: Real-Time "Enemy" Robot Detection
-description: 2025 ~ Present
+description: 2025 ~ 2026
 img: assets/img/CU_Robotics/highlight.jpg
 importance: 1
 category: work
 ---
 
-### Background  
-I am a Software Lead focusing on CV/ML for [CU Robotics](https://curobotics.net/). We compete in the [Arc Robotics](https://www.arc-robotics.org/) competition, where a primary way to score points is by detecting and shooting our opponents' armor plates. 
+### Background
 
-As such, I co-led the creation of our entire machine learning pipeline for armor plate detection, from data collection to inference.
+I am a Software Lead focusing on CV/ML for [CU Robotics](https://curobotics.net/). We compete in the [Arc Robotics](https://www.arc-robotics.org/) competition, where a primary way to score points is by detecting and shooting our opponents' armor plates.
+
+As such, I co-led the creation of our machine learning pipeline for armor plate detection, from data collection to inference.
 
 <div class="row mt-3">
     <div class="col-sm mt-3 mt-md-0">
@@ -36,12 +37,11 @@ Our plate detection dataset was created by taking photos of our robots with plat
     Plate Dataset example.
 </div>
 
-
 We used LabelStudio as our labeling software, and SAM3 as our autolabeler to essentially distill knowledge into our smaller model.
 
 ### Model Selection and Training
 
-Our hardware is a Jetson Orin AGX and 160fps cameras. Since this is a very fast paced competition, we prioritized inference speed for our pipeline. 
+Our hardware is a Jetson Orin AGX and 160fps cameras. Since this is a very fast paced competition, we prioritized inference speed for our pipeline.
 
 - **Plate Detection**: We went with Ultralytics' yolo26 nano model, seeing that TensorRT optimizations on a T4 chip brought inference down to around 3ms on their website.
 - **Icon Classification**: We ended up making a custom CNN with 7 layers. We evaluated Ultralytics' yolo26 nano classifier as well but found that it was much larger than what was needed for simple classifying.
@@ -50,8 +50,6 @@ We trained the models on Google Colab, using Comet as a visualizer to check trai
 
 ### Implementation
 
-After training the models, we exported them as `.engine` files through TensorRT with half precision for more speed. We're trying to get our classifier to batch and run on the Deep Learning Accelerator on our jetson to get the detection and classification running in parallel.
+After training the models, we exported them as `.engine` files through TensorRT with half precision for faster inference. The completed pipeline runs plate detection and icon classification on our Jetson Orin AGX for competition use.
 
 Although I'd love to share our dataset and code we used to train models, we've made them private (for now) to have a edge against our fellow competitors ;)
-
-

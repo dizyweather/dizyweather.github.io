@@ -2,10 +2,11 @@
 layout: page
 permalink: /resume/
 title: resume
-description: 
+description:
 nav: true
 ---
-Last Updated: Aug 2026
+
+Last Updated: September 2026
 
 <style>
   .pdf-container {
