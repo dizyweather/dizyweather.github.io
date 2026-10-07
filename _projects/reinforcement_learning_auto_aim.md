@@ -3,7 +3,7 @@ layout: page
 title: Reinforcement Learning for Auto Aim
 description: 2026 - Early development
 importance: 2
-category: work
+category: work-in-progress
 related_publications: false
 ---
 
