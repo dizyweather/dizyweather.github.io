@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 545" role="img" aria-labelledby="title">
+  <title id="title">Baseline and prose-filtered model evaluation across four corpora</title>
+  <rect width="1200" height="545" fill="#f7f9fc" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="48" y="54" font-size="27" fill="#172b4d" font-weight="700" text-anchor="start">
+      Training-data filters change performance across domains
+    </text>
+    <text x="48" y="91" font-size="21" fill="#52637c" font-weight="400" text-anchor="start">
+      Evaluation loss in nats per character; lower is better
+    </text>
+    <rect x="48" y="117" width="20" height="20" fill="#8291a6" />
+    <text x="78" y="134" font-size="20" fill="#172b4d" font-weight="400" text-anchor="start">Baseline</text>
+    <rect x="229" y="117" width="20" height="20" fill="#127c72" />
+    <text x="259" y="134" font-size="20" fill="#172b4d" font-weight="400" text-anchor="start">Prose-filtered mix</text>
+    <line x1="72" y1="395" x2="1145" y2="395" stroke="#dce3ed" />
+    <text x="57" y="402" font-size="18" fill="#52637c" font-weight="400" text-anchor="end">0</text>
+    <line x1="72" y1="340" x2="1145" y2="340" stroke="#dce3ed" />
+    <text x="57" y="347" font-size="18" fill="#52637c" font-weight="400" text-anchor="end">1</text>
+    <line x1="72" y1="285" x2="1145" y2="285" stroke="#dce3ed" />
+    <text x="57" y="292" font-size="18" fill="#52637c" font-weight="400" text-anchor="end">2</text>
+    <line x1="72" y1="230" x2="1145" y2="230" stroke="#dce3ed" />
+    <text x="57" y="237" font-size="18" fill="#52637c" font-weight="400" text-anchor="end">3</text>
+    <line x1="72" y1="175" x2="1145" y2="175" stroke="#dce3ed" />
+    <text x="57" y="182" font-size="18" fill="#52637c" font-weight="400" text-anchor="end">4</text>
+    <rect x="118" y="291.556" width="68" height="103.444" rx="4" fill="#8291a6" />
+    <text x="152" y="280.556" font-size="21" fill="#172b4d" font-weight="700" text-anchor="middle">1.8808</text>
+    <rect x="200" y="313.892" width="68" height="81.108" rx="4" fill="#127c72" />
+    <text x="234" y="302.8915" font-size="21" fill="#172b4d" font-weight="700" text-anchor="middle">1.4747</text>
+    <text x="193" y="433" font-size="23" fill="#172b4d" font-weight="700" text-anchor="middle">Wikipedia</text>
+    <text x="193" y="465" font-size="22" fill="#127c72" font-weight="400" text-anchor="middle">21.6% lower</text>
+    <rect x="394" y="287.981" width="68" height="107.019" rx="4" fill="#8291a6" />
+    <text x="428" y="276.981" font-size="21" fill="#172b4d" font-weight="700" text-anchor="middle">1.9458</text>
+    <rect x="476" y="308.039" width="68" height="86.960" rx="4" fill="#127c72" />
+    <text x="510" y="297.0395" font-size="21" fill="#172b4d" font-weight="700" text-anchor="middle">1.5811</text>
+    <text x="469" y="433" font-size="23" fill="#172b4d" font-weight="700" text-anchor="middle">TinyStories</text>
+    <text x="469" y="465" font-size="22" fill="#127c72" font-weight="400" text-anchor="middle">18.7% lower</text>
+    <rect x="670" y="239.157" width="68" height="155.843" rx="4" fill="#8291a6" />
+    <text x="704" y="228.1575" font-size="21" fill="#172b4d" font-weight="700" text-anchor="middle">2.8335</text>
+    <rect x="752" y="244.019" width="68" height="150.981" rx="4" fill="#127c72" />
+    <text x="786" y="233.0195" font-size="21" fill="#172b4d" font-weight="700" text-anchor="middle">2.7451</text>
+    <text x="745" y="433" font-size="23" fill="#172b4d" font-weight="700" text-anchor="middle">Shakespeare</text>
+    <text x="745" y="465" font-size="22" fill="#127c72" font-weight="400" text-anchor="middle">3.1% lower</text>
+    <rect x="946" y="207.824" width="68" height="187.176" rx="4" fill="#8291a6" />
+    <text x="980" y="196.824" font-size="21" fill="#172b4d" font-weight="700" text-anchor="middle">3.4032</text>
+    <rect x="1028" y="203.969" width="68" height="191.031" rx="4" fill="#127c72" />
+    <text x="1062" y="192.9685" font-size="21" fill="#172b4d" font-weight="700" text-anchor="middle">3.4733</text>
+    <text x="1021" y="433" font-size="23" fill="#172b4d" font-weight="700" text-anchor="middle">Python code</text>
+    <text x="1021" y="465" font-size="22" fill="#a34a2d" font-weight="400" text-anchor="middle">2.1% higher</text>
+    <text x="48" y="513" font-size="18" fill="#52637c" font-weight="400" text-anchor="start">
+      A3 measured results | Baseline: 49.9M tokens | Filtered mix: 49.8M tokens
+    </text>
+  </g>
+</svg>
