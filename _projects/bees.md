@@ -15,8 +15,6 @@ category: work
 
 I participated in the Summer 2025 SPUR program as part of the [Peleg Lab](https://www.peleglab.com/) under Danielle Chase, working on experiment design and data collection of honey bee swarm behavior in the wild.
 
-
-
 Below are the presentation slides summarizing my research and findings. You can also [check out presentation slides with working videos](https://o365coloradoedu-my.sharepoint.com/:p:/g/personal/dazh5631_colorado_edu/IQDUnNsBIekLSKfyr2qy_NdGARjg3RkeuY2971pNmkt0EAA).
 
 <div class="row justify-content-center mt-3">
