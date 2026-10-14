@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Distributed training benchmarks</title>
+  <desc id="desc">A transformer model connected to multiple GPUs, representing training benchmarks on Delta using PyTorch and Slurm.</desc>
+  <rect width="960" height="540" fill="#f7f9fc" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="52" y="72" font-size="26" fill="#52637c" font-weight="700">AI ENGINEERING</text>
+    <text x="52" y="194" font-size="57" fill="#172b4d" font-weight="700">Distributed</text>
+    <text x="52" y="262" font-size="57" fill="#172b4d" font-weight="700">Training</text>
+    <text x="55" y="321" font-size="32" fill="#127c72" font-weight="700">BENCHMARKS</text>
+    <text x="55" y="373" font-size="27" fill="#52637c">Measured speed &amp; memory</text>
+    <g fill="none" stroke="#127c72" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M744 206V241M642 280V241H846V280M642 352V380M846 352V380" />
+    </g>
+    <rect x="596" y="120" width="296" height="86" rx="16" fill="#172b4d" />
+    <text x="744" y="174" font-size="31" fill="#ffffff" text-anchor="middle" font-weight="700">TRANSFORMER</text>
+    <g fill="#e2f3f0" stroke="#127c72" stroke-width="3">
+      <rect x="580" y="280" width="124" height="72" rx="12" />
+      <rect x="784" y="280" width="124" height="72" rx="12" />
+      <rect x="580" y="380" width="124" height="72" rx="12" />
+      <rect x="784" y="380" width="124" height="72" rx="12" />
+    </g>
+    <g font-size="30" fill="#127c72" text-anchor="middle" font-weight="700">
+      <text x="642" y="327">GPU</text>
+      <text x="846" y="327">GPU</text>
+      <text x="642" y="427">GPU</text>
+      <text x="846" y="427">GPU</text>
+    </g>
+    <line x1="52" y1="475" x2="908" y2="475" stroke="#dce3ed" />
+    <text x="52" y="514" font-size="28" fill="#52637c">PyTorch / Delta / Slurm</text>
+  </g>
+</svg>

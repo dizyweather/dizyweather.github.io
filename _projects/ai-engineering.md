@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "AI Engineering: Training, Data & Evaluation"
-description: "Transformer implementation, training-data curation, and model evaluation."
-img: assets/img/ai-engineering/data-curation-card.svg
+title: "AI Engineering: Training & Scaling"
+description: "Implementing transformers, preparing training data, and evaluating multi-GPU training strategies on Delta."
+img: assets/img/ai-engineering/training-scaling-card.svg
 importance: 2
 category: work
 permalink: /projects/ai-engineering/
