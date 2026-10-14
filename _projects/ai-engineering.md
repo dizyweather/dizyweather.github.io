@@ -24,23 +24,35 @@ _styles: |
     padding: .65rem .6rem;
     border-bottom: 1px solid var(--global-divider-color);
   }
+  .ai-training-benchmarks details {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: .5rem;
+  }
+  .ai-training-benchmarks summary { cursor: pointer; font-weight: 600; }
 ---
 
-Through **AI Engineering** at CU Boulder, I studied the training stack from transformer implementation and data preparation to distributed training on Delta. My experiments connect model quality with the practical constraints of GPU memory, communication, and training time.
+[**CSCI 5942: AI Engineering**](https://csci5942.github.io/) is a graduate-level course at CU Boulder taught by **Christoffer Heckman and Mark Zhao**. Through its assignments, I developed hands-on foundations in transformer architecture, model evaluation, large-scale data processing, and distributed training.
+
+The sections follow the A1-A4 learning sequence. These topics connect throughout the training pipeline: data preparation shapes what a model learns, architecture and hardware influence training, and evaluation helps assess the results. Model adaptation and inference serving are planned extensions.
 
 <div class="ai-project-summary" markdown="1">
 
-**Training foundations, measured scaling, and model evaluation.**
+**Foundations across the LLM training pipeline.**
 
-I implemented a decoder-only transformer and benchmarked distributed training configurations, including a **4.04-billion-parameter model across eight GPUs**. Overlapped data parallelism achieved **92.0% scaling efficiency on four GPUs** in a separate 406M-parameter experiment. I also tested data curation and evaluation methods: my best prose-focused data mix reduced Wikipedia evaluation loss by **21.6%**, with a small regression on Python code.
+- **Architecture:** implemented core components of a decoder-only transformer and inspected its learning curves.
+- **Evaluation:** compared models across domains and investigated sensitivity to LLM-judge rubrics.
+- **Data:** processed and filtered training text with a Spark pipeline, then measured the effects on model quality.
+- **Systems:** benchmarked data, tensor, and pipeline parallelism on Delta to understand speed and memory tradeoffs.
 
 **Tools and methods:** Python, PyTorch, Spark, Opik, Slurm, data/tensor/pipeline parallelism, cross-domain evaluation, and LLM judging.
 
 </div>
 
-## Implementing and training a transformer
+## A1: Transformer architecture and training
 
-Within the course scaffold, I implemented the core components of a decoder-only transformer in PyTorch: causal multi-head attention, a feed-forward network, pre-normalized residual blocks, and the model's forward pass. I trained it on character-level Shakespeare text and compared four model sizes at a fixed training-token budget.
+I studied how causal attention, feed-forward layers, and residual connections work together in a decoder-only transformer. Within the course scaffold, I implemented causal multi-head attention, a feed-forward network, pre-normalized residual blocks, and the model's forward pass in PyTorch. I trained the model on character-level Shakespeare text and compared four model sizes at a fixed training-token budget.
 
 <div class="ai-project-figure">
 {% include figure.liquid path="assets/img/ai-engineering/training-curves.png" alt="Training loss continues to fall while validation loss levels off and eventually rises during the base model's training run." class="img-fluid rounded" caption="A1 base-model training curves: yellow is training loss; orange is validation loss. The horizontal axis shows steps in hundreds, and the vertical axis shows loss. Their separation helped me identify overfitting." %}
@@ -48,23 +60,43 @@ Within the course scaffold, I implemented the core components of a decoder-only 
 
 The model-size study showed diminishing improvements in validation loss across the sizes I tested. I used those observations to consider whether more model capacity or more training data would be a useful next experiment.
 
-**What I learned:** implementing the architecture and inspecting its learning curves gave me a clearer understanding of the behavior behind a training run.
+**What I learned:** understanding the architecture helps explain a training run, while learning curves show whether added capacity is improving generalization. Training loss alone was not enough to judge progress.
+
+## A2: Model evaluation
+
+I studied how evaluation depends on the data and criteria used to measure a model. I evaluated Shakespeare-trained language models across Shakespeare, TinyStories, Wikipedia, and Python code, then compared the base model with an identically configured model trained on TinyStories. I used Opik to inspect generation traces and judge scores.
+
+<div class="ai-project-figure">
+{% include figure.liquid path="assets/img/ai-engineering/cross-domain-evaluation.png" alt="Evaluation heatmap showing loss for five model sizes across four corpora, with out-of-vocabulary character deletion rates listed for each corpus." class="img-fluid rounded" caption="A2 cross-domain evaluation. The larger models do not consistently improve every column, and the base checkpoint is not the lowest-loss model on Shakespeare in this evaluation." %}
+</div>
+
+I compared next-character loss with LLM judgments of grammar, coherence, and style, using **50 generations per model**. The TinyStories model received higher pointwise grammar and coherence scores, while pairwise preferences followed the requested writing-style rubric. This made the question of which model was "better" depend on what the evaluation actually rewarded.
+
+I also tested the judge by paraphrasing its rubric and reordering the scoring dimensions. With the scoring dimensions reordered, the base model's mean grammar score changed from **2.94 to 2.34**.
+
+**What I learned:** judge prompts are part of the measurement system. I need to check their sensitivity and examine multiple measures before trusting a model ranking.
+
+## A3: Processing training data at scale
+
+I studied how raw web text becomes a training dataset through normalization, chunking, deduplication, and feature-based filtering. I worked with a Spark pipeline for Common Crawl text; exact deduplication removed approximately **55% of the chunks** remaining at that stage.
+
+For my experiments, I added sentence-ending punctuation and capitalization features and tested five data mixes. The best mix on Wikipedia combined these features with a minimum English stopword count. The baseline and this mix contained approximately **50 million training tokens** each.
+
+<div class="ai-project-figure">
+{% include figure.liquid path="assets/img/ai-engineering/data-curation-comparison.svg" alt="Bar chart comparing baseline and prose-filtered evaluation loss on Wikipedia, TinyStories, Shakespeare, and Python code. The filtered mix improves the first three and slightly worsens Python code." class="img-fluid rounded" caption="A3 results: baseline versus the best mix on Wikipedia. Lower loss is better; values are nats per character." %}
+</div>
+
+The best prose-focused mix reduced Wikipedia loss from **1.8808 to 1.4747**, a **21.6% improvement**, but Python-code loss rose from **3.4032 to 3.4733**. Restricting prose to `.edu` hosts left only **1.7 million tokens**, showing how a filter can also remove too much training data.
+
+**What I learned:** a useful filter should be judged against the intended domain and multiple evaluation sets. A cleaner-looking dataset does not guarantee better performance everywhere.
 
 <div class="ai-training-benchmarks" markdown="1">
 
-## Scaling training on Delta
+## A4: Distributed training on Delta
 
-I extended the course scaffold with gradient synchronization and communication overlap for data parallelism, tensor-parallel layers, and a one-forward/one-backward (1F1B) pipeline schedule. I ran the experiments through Slurm on Delta's NVIDIA A40 GPUs and compared step time, training throughput, and reported peak memory.
+I studied how training can be distributed across GPUs by replicating a model over different data, sharding its tensors, or splitting its layers into pipeline stages. I extended the course scaffold with overlapped gradient synchronization, tensor-parallel layers, and a one-forward/one-backward (1F1B) pipeline schedule, then ran benchmarks through Slurm on Delta's NVIDIA A40 GPUs.
 
-### Overlapping communication with computation
-
-For a **406M-parameter model**, overlapped data parallelism reached **89,543 training tokens/second on four GPUs**, a **3.68x speedup** over its one-GPU baseline and **92.0% scaling efficiency**. The naive four-GPU version reached 86,384 tokens/second and 87.6% efficiency.
-
-I compared the measured gap from ideal scaling with an estimate based on gradient size and all-reduce bandwidth. The estimated communication time was approximately **0.155 seconds**, versus **0.188 seconds** of measured overhead for naive data parallelism. Overlap shortened the four-GPU step from **1.517 to 1.464 seconds**. This helped me connect a performance measurement to the communication work behind it.
-
-### Choosing between throughput and memory
-
-For an **838M-parameter model** at a fixed global batch, data parallelism delivered the highest throughput, while tensor parallelism reduced the reported peak memory.
+For an **838M-parameter model** at a fixed global batch, data parallelism gave the highest throughput, while tensor parallelism reduced reported peak memory:
 
 <div class="table-responsive" markdown="1">
 
@@ -77,7 +109,16 @@ For an **838M-parameter model** at a fixed global batch, data parallelism delive
 
 </div>
 
-**My decision:** use data parallelism for this model on these GPUs, because the model's training footprint already fit on one A40. Tensor parallelism offered a smaller memory footprint, but its communication cost made it slower in this experiment.
+**What I learned:** choose a strategy for the model and hardware available. Data parallelism was the better throughput choice when this model already fit on one A40; tensor and pipeline sharding became useful for managing memory. More GPUs introduce communication and scheduling costs as well as capacity.
+
+<details markdown="1">
+<summary>Additional distributed-training benchmarks</summary>
+
+### Overlapping communication with computation
+
+For a **406M-parameter model**, overlapped data parallelism reached **89,543 training tokens/second on four GPUs**, a **3.68x speedup** over its one-GPU baseline and **92.0% scaling efficiency**. The naive four-GPU version reached 86,384 tokens/second and 87.6% efficiency.
+
+I compared the measured gap from ideal scaling with an estimate based on gradient size and all-reduce bandwidth. The estimated communication time was approximately **0.155 seconds**, versus **0.188 seconds** of measured overhead for naive data parallelism. Overlap shortened the four-GPU step from **1.517 to 1.464 seconds**. This helped me connect a performance measurement to the communication work behind it.
 
 ### Scheduling a pipeline to fit in memory
 
@@ -104,34 +145,9 @@ DP, TP, and PP denote the data-, tensor-, and pipeline-parallel degrees. This ta
 
 **My decision:** eight-stage pipeline parallelism with 1F1B was the fastest configuration I tested. It avoided the gradient and tensor-parallel all-reduces of the other mappings while keeping memory within the GPU limit. The result shows why a configuration should be selected for the particular model and hardware. These are short training benchmarks; the 4.04B model was not trained to convergence.
 
+</details>
+
 </div>
-## Improving training data and measuring the tradeoff
-
-I worked with a pipeline that turns raw Common Crawl text into training data through normalization, chunking, deduplication, and feature-based filtering. Exact deduplication removed approximately **55% of the chunks** remaining at that stage.
-
-For my experiments, I added sentence-ending punctuation and capitalization features and tested five data mixes. The best mix on Wikipedia combined these features with a minimum English stopword count. The baseline and this mix contained approximately **50 million training tokens** each.
-
-<div class="ai-project-figure">
-{% include figure.liquid path="assets/img/ai-engineering/data-curation-comparison.svg" alt="Bar chart comparing baseline and prose-filtered evaluation loss on Wikipedia, TinyStories, Shakespeare, and Python code. The filtered mix improves the first three and slightly worsens Python code." class="img-fluid rounded" caption="A3 results: baseline versus the best mix on Wikipedia. Lower loss is better; values are nats per character." %}
-</div>
-
-The filtered mix also improved TinyStories loss, but Python-code loss rose from **3.4032 to 3.4733**. I also tried restricting prose to `.edu` hosts. That left only **1.7 million tokens**, so I treated it as an example of overfiltering rather than a comparison at the same data budget.
-
-**What I learned:** a useful filter should be judged against the intended domain and multiple evaluation sets. A cleaner-looking dataset does not guarantee better performance everywhere.
-
-## Evaluating models beyond a single score
-
-I evaluated a ladder of Shakespeare-trained language models across Shakespeare, TinyStories, Wikipedia, and Python code, then compared the base model with an identically configured model trained on TinyStories. I used Opik to inspect generation traces and judge scores.
-
-<div class="ai-project-figure">
-{% include figure.liquid path="assets/img/ai-engineering/cross-domain-evaluation.png" alt="Evaluation heatmap showing loss for five model sizes across four corpora, with out-of-vocabulary character deletion rates listed for each corpus." class="img-fluid rounded" caption="A2 cross-domain evaluation. The larger models do not consistently improve every column, and the base checkpoint is not the lowest-loss model on Shakespeare in this evaluation." %}
-</div>
-
-I compared next-character loss with LLM judgments of grammar, coherence, and style, using **50 generations per model**. The TinyStories model received higher pointwise grammar and coherence scores, while pairwise preferences followed the requested writing-style rubric. This made the question of which model was "better" depend on what the evaluation actually rewarded.
-
-I also tested the judge by paraphrasing its rubric and reordering the scoring dimensions. With the scoring dimensions reordered, the base model's mean grammar score changed from **2.94 to 2.34**.
-
-**What I learned:** judge prompts are part of the measurement system. I need to check their sensitivity and examine multiple measures before trusting a model ranking.
 
 ## Future work
 
@@ -150,5 +166,3 @@ This is a future milestone. I will add an implementation and measured results on
 ---
 
 <p class="ai-project-status">Fall 2026 coursework at CU Boulder. Results are from my completed A1-A4 reports; model adaptation and inference serving are planned. The assignments build on course-provided scaffolding, with my implementation and analysis described above. Distributed-training results are specific to the tested model configurations and Delta hardware.</p>
-
-[AI Engineering course overview](https://csci5942.github.io/)
