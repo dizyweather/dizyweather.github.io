@@ -1,8 +1,8 @@
 ---
 layout: page
-title: "AI Engineering: Training & Scaling"
-description: "Implementing transformers, preparing training data, and evaluating multi-GPU training strategies on Delta."
-img: assets/img/ai-engineering/training-scaling-card.svg
+title: "AI Engineering: LLM Pipeline Foundations"
+description: "Hands-on foundations in transformer architecture, model evaluation, large-scale data processing, and distributed training."
+img: assets/img/ai-engineering/pipeline-foundations-card.svg
 importance: 2
 category: work
 permalink: /projects/ai-engineering/
