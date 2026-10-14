@@ -133,8 +133,22 @@ I also tested the judge by paraphrasing its rubric and reordering the scoring di
 
 **What I learned:** judge prompts are part of the measurement system. I need to check their sensitivity and examine multiple measures before trusting a model ranking.
 
+## Future work
+
+### Efficient model adaptation
+
+**Planned coursework:** I plan to compare full fine-tuning with LoRA on pretrained GPT-2, measuring task quality, GPU memory, training time, and retention of general capabilities. I will investigate how adapter rank and placement affect these tradeoffs, and implement adapter merging for inference.
+
+This work will extend the training experiments to adapting a pretrained model under a limited resource budget. The upcoming [A5 assignment](https://github.com/csci5942/assignments/blob/main/assignment-5/README.md) compares these approaches on the E2E natural-language-generation task.
+
+### Inference serving
+
+**Planned extension:** I want to serve a trained or adapted model through an inference API and measure how it behaves under different request loads. I will document the model, hardware, and serving configuration, then compare time to first token, output-token throughput, latency, and GPU memory use.
+
+This is a future milestone. I will add an implementation and measured results once it is completed.
+
 ---
 
-<p class="ai-project-status">Fall 2026 coursework at CU Boulder. Results are from my completed A1-A4 reports. The assignments build on course-provided scaffolding, with my implementation and analysis described above. Distributed-training results are specific to the tested model configurations and Delta hardware.</p>
+<p class="ai-project-status">Fall 2026 coursework at CU Boulder. Results are from my completed A1-A4 reports; model adaptation and inference serving are planned. The assignments build on course-provided scaffolding, with my implementation and analysis described above. Distributed-training results are specific to the tested model configurations and Delta hardware.</p>
 
 [AI Engineering course overview](https://csci5942.github.io/)
