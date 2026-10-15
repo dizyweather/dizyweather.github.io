@@ -19,6 +19,7 @@ _styles: |
   .ai-project-figure { margin: 1.5rem 0; }
   .ai-training-benchmarks .table-responsive { margin: 1.25rem 0; }
   .ai-training-benchmarks table { width: 100%; min-width: 32rem; font-size: .9rem; }
+  .ai-training-benchmarks > .table-responsive table { min-width: 0; }
   .ai-training-benchmarks th,
   .ai-training-benchmarks td {
     padding: .65rem .6rem;
@@ -88,22 +89,28 @@ With prose-focused filters, Wikipedia evaluation loss fell **21.6%**, while Pyth
 
 ## A4: Distributed training on Delta
 
-I studied how training can be distributed across GPUs by replicating a model over different data, sharding its tensors, or splitting its layers into pipeline stages. I extended the course scaffold with overlapped gradient synchronization, tensor-parallel layers, and a one-forward/one-backward (1F1B) pipeline schedule, then ran benchmarks through Slurm on Delta's NVIDIA A40 GPUs.
+Within the course scaffold, I implemented overlapped gradient synchronization, tensor-parallel layers, and a one-forward/one-backward (1F1B) pipeline schedule. I benchmarked throughput and memory through Slurm on Delta's NVIDIA A40 GPUs.
 
 For an **838M-parameter model** at a fixed global batch, data parallelism gave the highest throughput, while tensor parallelism reduced reported peak memory:
 
 <div class="table-responsive" markdown="1">
 
-| Configuration                         | Training tokens/s | Step time (s) | Peak memory (GiB) |
-| :------------------------------------ | ----------------: | ------------: | ----------------: |
-| One GPU                               |            11,649 |         11.25 |             18.55 |
-| Data parallel: 4 GPUs                 |        **41,949** |      **3.12** |             18.55 |
-| Data parallel: 2 x tensor parallel: 2 |            21,681 |          6.05 |             10.50 |
-| Tensor parallel: 4 GPUs               |            10,834 |         12.10 |          **6.34** |
+| Configuration                         | Training tokens/s | Peak memory (GiB) |
+| :------------------------------------ | ----------------: | ----------------: |
+| One GPU                               |            11,649 |             18.55 |
+| Data parallel: 4 GPUs                 |        **41,949** |             18.55 |
+| Data parallel: 2 x tensor parallel: 2 |            21,681 |             10.50 |
+| Tensor parallel: 4 GPUs               |            10,834 |          **6.34** |
 
 </div>
 
-**What I learned:** choose a strategy for the model and hardware available. Data parallelism was the better throughput choice when this model already fit on one A40; tensor and pipeline sharding became useful for managing memory. More GPUs introduce communication and scheduling costs as well as capacity.
+**What I learned:** each strategy trades off speed, memory, and communication:
+
+- **Data parallelism:** copies the model across GPUs, each processing different data and synchronizing gradients. It can improve throughput, but duplicates model state.
+- **Tensor parallelism:** splits layer tensors and computation across GPUs, reducing per-GPU memory while adding frequent communication.
+- **Pipeline parallelism:** splits layers into stages that process micro-batches, distributing memory while introducing scheduling and idle-time tradeoffs.
+
+The choice depends on the model and hardware. Here, data parallelism gave the best throughput because the model already fit on one A40.
 
 <details markdown="1">
 <summary>Additional distributed-training benchmarks</summary>
