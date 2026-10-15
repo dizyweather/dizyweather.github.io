@@ -2,6 +2,8 @@
 layout: page
 title: Real-Time "Enemy" Robot Detection
 description: 2025 ~ 2026
+card_meta: "Fall 2025–Summer 2026 · CU Robotics"
+card_description: "Training and deploying compact vision models for competitive robotics."
 img: assets/img/CU_Robotics/highlight.jpg
 importance: 1
 category: work

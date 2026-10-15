@@ -125,6 +125,12 @@ ul.task-list input[type="checkbox"] {
 // Projects
 
 .projects {
+  .project-meta {
+    color: var(--global-text-color-light);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+
   a {
     text-decoration: none;
 

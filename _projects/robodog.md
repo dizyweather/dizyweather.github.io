@@ -2,6 +2,8 @@
 layout: page
 title: Unitree Go1 Data Collection and Localization
 description: 2026
+card_meta: "Spring 2026 · Robotics research"
+card_description: "Streamlining robot data collection and mapping with the Unitree Go1."
 img: assets/img/go1/robodog_walk.gif
 avoid_scaling: true
 importance: 3

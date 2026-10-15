@@ -2,6 +2,8 @@
 layout: page
 title: Reinforcement Learning for Auto Aim
 description: 2026 - Early development
+card_meta: "Fall 2026 · Early development"
+card_description: "Exploring reinforcement learning for robotic target selection and shot timing."
 importance: 2
 category: work-in-progress
 related_publications: false

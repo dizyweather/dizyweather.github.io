@@ -2,6 +2,8 @@
 layout: page
 title: "Senior Thesis: Prompt Workshop"
 description: "2026 - Helping users clarify underdefined AI prompts"
+card_meta: "Fall 2026 · In progress"
+card_description: "Developing collaborative prompt refinement to bridge the AI prompting gap."
 importance: 1
 category: work-in-progress
 related_publications: false

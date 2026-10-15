@@ -2,6 +2,8 @@
 layout: page
 title: "AI Engineering: LLM Pipeline Foundations"
 description: "Hands-on foundations in transformer architecture, model evaluation, large-scale data processing, and distributed training."
+card_meta: "Fall 2026 · Graduate coursework"
+card_description: "Exploring transformer architecture, evaluation, data processing, and distributed training."
 img: assets/img/ai-engineering/pipeline-foundations-card.svg
 importance: 2
 category: work

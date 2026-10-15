@@ -2,6 +2,8 @@
 layout: page
 title: Experiment Design and Data Collection of Honeybee Swarms
 description: 2025
+card_meta: "Summer 2025 · SPUR research"
+card_description: "Building synchronized camera workflows to observe honeybee swarms in the wild."
 img: assets/img/bees/swarm_cropped.jpg
 importance: 4
 category: work
