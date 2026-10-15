@@ -402,7 +402,12 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-visual-question-and-answering-ambiguity-resolution",
+          section: "News",},{id: "projects-ai-engineering-llm-pipeline-foundations",
+          title: 'AI Engineering: LLM Pipeline Foundations',
+          description: "Hands-on foundations in transformer architecture, model evaluation, large-scale data processing, and distributed training.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ai-engineering/";
+            },},{id: "projects-visual-question-and-answering-ambiguity-resolution",
           title: 'Visual Question and Answering Ambiguity Resolution',
           description: "2026 - WORK IN PROGRESS",
           section: "Projects",handler: () => {
@@ -414,14 +419,24 @@ ninja.data = [{
               window.location.href = "/projects/bees/";
             },},{id: "projects-real-time-quot-enemy-quot-robot-detection",
           title: 'Real-Time &amp;quot;Enemy&amp;quot; Robot Detection',
-          description: "2025 ~ Present",
+          description: "2025 ~ 2026",
           section: "Projects",handler: () => {
               window.location.href = "/projects/plate_detection/";
+            },},{id: "projects-reinforcement-learning-for-auto-aim",
+          title: 'Reinforcement Learning for Auto Aim',
+          description: "2026 - Early development",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/reinforcement_learning_auto_aim/";
             },},{id: "projects-unitree-go1-data-collection-and-localization",
           title: 'Unitree Go1 Data Collection and Localization',
           description: "2026",
           section: "Projects",handler: () => {
               window.location.href = "/projects/robodog/";
+            },},{id: "projects-senior-thesis-prompt-workshop",
+          title: 'Senior Thesis: Prompt Workshop',
+          description: "2026 - Helping users clarify underdefined AI prompts",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/senior-thesis/";
             },},{id: "teachings-data-science-fundamentals",
           title: 'Data Science Fundamentals',
           description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
