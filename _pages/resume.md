@@ -6,7 +6,7 @@ description:
 nav: true
 ---
 
-Last Updated: September 2026
+Last Updated: October 2026
 
 <style>
   .pdf-container {
