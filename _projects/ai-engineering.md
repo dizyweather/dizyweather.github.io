@@ -154,16 +154,8 @@ DP, TP, and PP denote the data-, tensor-, and pipeline-parallel degrees. This ta
 
 ### Efficient model adaptation
 
-**Planned coursework:** I plan to compare full fine-tuning with LoRA on pretrained GPT-2, measuring task quality, GPU memory, training time, and retention of general capabilities. I will investigate how adapter rank and placement affect these tradeoffs, and implement adapter merging for inference.
-
-This work will extend the training experiments to adapting a pretrained model under a limited resource budget. The upcoming [A5 assignment](https://github.com/csci5942/assignments/blob/main/assignment-5/README.md) compares these approaches on the E2E natural-language-generation task.
-
-### Inference serving
-
-**Planned extension:** I want to serve a trained or adapted model through an inference API and measure how it behaves under different request loads. I will document the model, hardware, and serving configuration, then compare time to first token, output-token throughput, latency, and GPU memory use.
-
-This is a future milestone. I will add an implementation and measured results once it is completed.
+**Planned coursework:** In [A5](https://github.com/csci5942/assignments/blob/main/assignment-5/README.md), I'll compare full fine-tuning with LoRA on pretrained GPT-2, measuring task quality, memory, training time, and retention of general capabilities. I'll test adapter rank and placement and implement adapter merging for inference.
 
 ---
 
-<p class="ai-project-status">Fall 2026 coursework at CU Boulder. Results are from my completed A1-A4 reports; model adaptation and inference serving are planned. The assignments build on course-provided scaffolding, with my implementation and analysis described above. Distributed-training results are specific to the tested model configurations and Delta hardware.</p>
+<p class="ai-project-status">Fall 2026 at CU Boulder. Completed A1-A4 coursework using course-provided scaffolding. Benchmarks reflect the tested configurations and Delta hardware; model adaptation is planned.</p>
