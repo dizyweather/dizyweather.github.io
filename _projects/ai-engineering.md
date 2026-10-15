@@ -33,9 +33,7 @@ _styles: |
   .ai-training-benchmarks summary { cursor: pointer; font-weight: 600; }
 ---
 
-[**CSCI 5942: AI Engineering**](https://csci5942.github.io/) is a graduate-level course at CU Boulder taught by **Christoffer Heckman and Mark Zhao**. Through its assignments, I developed hands-on foundations in transformer architecture, model evaluation, large-scale data processing, and distributed training.
-
-The sections follow the A1-A4 learning sequence. These topics connect throughout the training pipeline: data preparation shapes what a model learns, architecture and hardware influence training, and evaluation helps assess the results. Model adaptation and inference serving are planned extensions.
+I'm currently taking [**CSCI 5942: AI Engineering**](https://csci5942.github.io/), a graduate-level course at CU Boulder taught by **Professor Christoffer Heckman and Professor Mark Zhao**.
 
 <div class="ai-project-summary" markdown="1">
 
@@ -52,43 +50,39 @@ The sections follow the A1-A4 learning sequence. These topics connect throughout
 
 ## A1: Transformer architecture and training
 
-I studied how causal attention, feed-forward layers, and residual connections work together in a decoder-only transformer. Within the course scaffold, I implemented causal multi-head attention, a feed-forward network, pre-normalized residual blocks, and the model's forward pass in PyTorch. I trained the model on character-level Shakespeare text and compared four model sizes at a fixed training-token budget.
+Within the course scaffold, I implemented causal multi-head attention, a feed-forward network, pre-normalized residual blocks, and the forward pass of a decoder-only transformer in PyTorch. I trained it on character-level Shakespeare text and compared four model sizes at a fixed training-token budget.
 
 <div class="ai-project-figure">
-{% include figure.liquid path="assets/img/ai-engineering/training-curves.png" alt="Training loss continues to fall while validation loss levels off and eventually rises during the base model's training run." class="img-fluid rounded" caption="A1 base-model training curves: yellow is training loss; orange is validation loss. The horizontal axis shows steps in hundreds, and the vertical axis shows loss. Their separation helped me identify overfitting." %}
+{% include figure.liquid path="assets/img/ai-engineering/training-curves.png" alt="Training loss continues to fall while validation loss levels off and eventually rises during the base model's training run." class="img-fluid rounded" caption="A1 training (yellow) and validation (orange) loss, with steps in hundreds. The widening gap indicates overfitting." %}
 </div>
 
-The model-size study showed diminishing improvements in validation loss across the sizes I tested. I used those observations to consider whether more model capacity or more training data would be a useful next experiment.
+Larger models gave diminishing improvements in validation loss; the training/validation gap also revealed overfitting.
 
-**What I learned:** understanding the architecture helps explain a training run, while learning curves show whether added capacity is improving generalization. Training loss alone was not enough to judge progress.
+**What I learned:** training loss alone isn't enough. Architecture and learning curves help me judge whether more model capacity improves generalization.
 
 ## A2: Model evaluation
 
-I studied how evaluation depends on the data and criteria used to measure a model. I evaluated Shakespeare-trained language models across Shakespeare, TinyStories, Wikipedia, and Python code, then compared the base model with an identically configured model trained on TinyStories. I used Opik to inspect generation traces and judge scores.
+I evaluated models across four corpora, then compared Shakespeare- and TinyStories-trained models using **50 generations each**. I used Opik to inspect traces and LLM judgments of grammar, coherence, and style.
 
 <div class="ai-project-figure">
-{% include figure.liquid path="assets/img/ai-engineering/cross-domain-evaluation.png" alt="Evaluation heatmap showing loss for five model sizes across four corpora, with out-of-vocabulary character deletion rates listed for each corpus." class="img-fluid rounded" caption="A2 cross-domain evaluation. The larger models do not consistently improve every column, and the base checkpoint is not the lowest-loss model on Shakespeare in this evaluation." %}
+{% include figure.liquid path="assets/img/ai-engineering/cross-domain-evaluation.png" alt="Evaluation heatmap showing loss for five model sizes across four corpora, with out-of-vocabulary character deletion rates listed for each corpus." class="img-fluid rounded" caption="A2 loss across four corpora: larger models do not consistently perform better." %}
 </div>
 
-I compared next-character loss with LLM judgments of grammar, coherence, and style, using **50 generations per model**. The TinyStories model received higher pointwise grammar and coherence scores, while pairwise preferences followed the requested writing-style rubric. This made the question of which model was "better" depend on what the evaluation actually rewarded.
+Pointwise scores favored TinyStories for grammar and coherence; pairwise preferences followed the requested style. Changing the judge rubric also changed scores.
 
-I also tested the judge by paraphrasing its rubric and reordering the scoring dimensions. With the scoring dimensions reordered, the base model's mean grammar score changed from **2.94 to 2.34**.
-
-**What I learned:** judge prompts are part of the measurement system. I need to check their sensitivity and examine multiple measures before trusting a model ranking.
+**What I learned:** lower loss on one dataset doesn't necessarily mean better generated text or stronger performance in other domains. LLM judges can assess grammar, coherence, and style, but their rankings depend on the rubric and prompt wording. I learned to compare multiple measures before trusting a model ranking.
 
 ## A3: Processing training data at scale
 
-I studied how raw web text becomes a training dataset through normalization, chunking, deduplication, and feature-based filtering. I worked with a Spark pipeline for Common Crawl text; exact deduplication removed approximately **55% of the chunks** remaining at that stage.
-
-For my experiments, I added sentence-ending punctuation and capitalization features and tested five data mixes. The best mix on Wikipedia combined these features with a minimum English stopword count. The baseline and this mix contained approximately **50 million training tokens** each.
+I worked with a **Spark pipeline for Common Crawl text**, covering normalization, chunking, deduplication, and filtering. I added prose-quality features and compared filtered mixes with a baseline at **the same training-token budget**.
 
 <div class="ai-project-figure">
 {% include figure.liquid path="assets/img/ai-engineering/data-curation-comparison.svg" alt="Bar chart comparing baseline and prose-filtered evaluation loss on Wikipedia, TinyStories, Shakespeare, and Python code. The filtered mix improves the first three and slightly worsens Python code." class="img-fluid rounded" caption="A3 results: baseline versus the best mix on Wikipedia. Lower loss is better; values are nats per character." %}
 </div>
 
-The best prose-focused mix reduced Wikipedia loss from **1.8808 to 1.4747**, a **21.6% improvement**, but Python-code loss rose from **3.4032 to 3.4733**. Restricting prose to `.edu` hosts left only **1.7 million tokens**, showing how a filter can also remove too much training data.
+With prose-focused filters, Wikipedia evaluation loss fell **21.6%**, while Python-code loss increased slightly. More aggressive filtering also left too little training data for a fair comparison.
 
-**What I learned:** a useful filter should be judged against the intended domain and multiple evaluation sets. A cleaner-looking dataset does not guarantee better performance everywhere.
+**What I learned:** data quantity alone isn't enough. Duplicates and irrelevant text can reduce a dataset's usefulness, while aggressive filtering can remove valuable data. Curation requires balancing quality, diversity, and volume against the target domain.
 
 <div class="ai-training-benchmarks" markdown="1">
 
