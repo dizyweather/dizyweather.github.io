@@ -36,7 +36,7 @@ _styles: |
   .ai-training-benchmarks summary { cursor: pointer; font-weight: 600; }
 ---
 
-I'm currently taking [**CSCI 5942: AI Engineering**](https://csci5942.github.io/), a graduate-level course at CU Boulder taught by **Professor Christoffer Heckman and Professor Mark Zhao**.
+I'm currently taking [CSCI 5942: AI Engineering](https://csci5942.github.io/), a graduate-level course at CU Boulder taught by **Professor Christoffer Heckman and Professor Mark Zhao**.
 
 <div class="ai-project-summary" markdown="1">
 
